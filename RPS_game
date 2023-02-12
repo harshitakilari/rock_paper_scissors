@@ -1,0 +1,30 @@
+import random
+user_score=0
+computer_score=0
+pic=["rock","paper","scissors"]
+while True:
+    user = input("type rock/paper/scissors or quit : ")
+    if user=="quit":
+        break
+    if user not in pic:
+        continue
+    random_num=random.randint(0,2) #rock=0,paper=1,scissors=2
+    computer=pic[random_num]
+    print("computer picked",computer)
+
+    if user=="rock" and computer=="scissors":
+        print("you win!")
+        user_score=user_score+1
+    elif user=="scissors" and computer=="paper":
+        print("you win!")
+        user_score=user_score+1
+    if user=="paper" and computer=="rock":
+        print("you win!")
+        user_score=user_score+1
+    else:
+        print("you lost!")
+        computer_score=computer_score+1
+
+print(f"you won {user_score} times")
+print(f"computer won {computer_score} times")
+print("goodbye!")
